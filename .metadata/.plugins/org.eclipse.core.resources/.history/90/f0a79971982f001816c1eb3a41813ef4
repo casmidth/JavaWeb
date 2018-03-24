@@ -2,7 +2,6 @@ package br.com.caelum.teste;
 
 import java.sql.SQLException;
 import java.util.Calendar;
-import java.util.List;
 
 import br.com.caelum.jdbc.dao.ContatoDAO;
 import br.com.caelum.model.Contato;
@@ -40,8 +39,7 @@ public class TestaConexao {
 //		System.out.println("Contato gravado!");
 	
 		ContatoDAO contatoDAO2 = new ContatoDAO();
-		List<Contato> lista = contatoDAO2.createList();
-		contatoDAO2.printTodosContatos(lista);
+		contatoDAO2.createList();
 		
 	}
 	
