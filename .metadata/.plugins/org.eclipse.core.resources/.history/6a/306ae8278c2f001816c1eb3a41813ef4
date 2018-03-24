@@ -9,7 +9,6 @@ public class Contato {
 	private String email;
 	private String endereco;
 	private Calendar dataNascimento;
-	
 	public String getNome() {
 		return nome;
 	}
@@ -39,15 +38,6 @@ public class Contato {
 	}
 	public void setId(Long id) {
 		this.id = id;
-	}
-	
-	@Override
-	public String toString() {
-		return "Contato [id=" + id 
-				+ ", nome=" + nome 
-				+ ", email=" + email 
-				+ ", endereco=" + endereco
-				+ ", dataNascimento=" + dataNascimento + "]";
 	}
 
 }

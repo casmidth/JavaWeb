@@ -42,7 +42,7 @@ public class ContatoDAO {
 		}
 	}
 	
-	public List<Contato> createList(){
+	public List<Contato> getList(){
 		
 		List<Contato> contatos = new ArrayList<>();
 		
@@ -65,7 +65,7 @@ public class ContatoDAO {
 			}
 			resultSet.close();
 			smtm.close();
-			
+
 			printTodosContatos(contatos);
 			
 		} catch (SQLException e) {
@@ -78,13 +78,12 @@ public class ContatoDAO {
 	
 	public void printTodosContatos(List<Contato> contatos){
 		for(Contato contato : contatos){
-			System.out.println("ID: " + contato.getId());
 			System.out.println("Nome: " + contato.getNome());
 			System.out.println("Endereco: " + contato.getEndereco());
 			System.out.println("Email: " + contato.getEmail());
 			System.out.println("Data Nascimento: " + contato.getDataNascimento());
-			System.out.println("-----------------------------------------------");
 		}
+		
 	}
 	
 }

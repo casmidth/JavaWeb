@@ -39,7 +39,7 @@ public class TestaConexao {
 //		System.out.println("Contato gravado!");
 	
 		ContatoDAO contatoDAO2 = new ContatoDAO();
-		contatoDAO2.createList();
+		contatoDAO2.getList();
 		
 	}
 	
