@@ -1,0 +1,18 @@
+1521899110868	Rename local variable 'conexao'
+1521903129695	Move compilation unit
+1521903163669	Rename package 'br.com.caelum.jdbc.teste'
+1521903326317	Rename package 'model'
+1521903343684	Rename package 'teste'
+1521903378660	Encapsulate field 'id'
+1521906817605	Rename package 'br.com.caelum.jdbc'
+1521906836717	Move compilation unit
+1521906864864	Move compilation unit
+1521906868180	Delete element
+1521906957724	Move compilation unit
+1521906974497	Move compilation unit
+1521906978107	Delete element
+1521906991082	Delete element
+1521907035041	Move compilation unit
+1521907108788	Move compilation unit
+1521907112072	Delete element
+1521907492478	Move compilation unit
