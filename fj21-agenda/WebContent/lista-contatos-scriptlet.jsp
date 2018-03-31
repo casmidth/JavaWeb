@@ -8,13 +8,15 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>Lista Contato</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	</head>
 	<body>
+	<main class="container">
 	<% 
 		ContatoDAO dao = new ContatoDAO(); 
 		List<Contato> contatos = dao.getList();
 	%>
-		<table>
+		<table class="table">
 			<thead>
 				<tr>
 					<th>ID</th>
@@ -31,10 +33,11 @@
 					<td><%= contato.getNome() %></td>
 					<td><%= contato.getEmail() %></td>
 					<td><%= contato.getEndereco() %></td>
-					<td><%= contato.getDataNascimento() %></td>
+					<td><%= contato.getDataNascimento().getTime() %></td>
 				</tr>
 				<% } %>
 			</tbody>
 		</table>
+	</main>
 	</body>
 </html>
