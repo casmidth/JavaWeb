@@ -1,0 +1,15 @@
+package br.com.caelum.util;
+
+import java.util.Calendar;
+
+public class FixDateFormating {
+	
+	public Calendar setDateToCalendar(Date date){
+		
+		Calendar calendar = Calendar.getInstance();
+		calendar.setTime(date);
+		
+		return calendar;
+	}
+
+}

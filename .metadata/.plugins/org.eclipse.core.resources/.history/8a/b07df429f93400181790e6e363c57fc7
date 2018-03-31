@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<form action="adicionaContato">
+			Nome: 
+			<input type="text" name="nome"/> 
+			
+			Email:
+			<input type="email" name="email"/>
+			
+			Endereco:
+			<input type="text" name="endereco"/>
+			
+			Data de nascimento:
+			<input type="text" name="dataNascimento"/>
+			 
+		</form>
+	</body>
+</html>
