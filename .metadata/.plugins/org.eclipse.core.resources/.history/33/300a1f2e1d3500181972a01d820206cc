@@ -35,7 +35,7 @@
 					<td>${ contato.nome }</td>
 					<td>${ contato.email }</td>
 					<td>${ contato.endereco }</td>
-					<td><fmt:formatDate value="${ contato.dataNascimento.time }" pattern="dd/MM/yyyy"/> </td>
+					<td><fmt:formatDate value="${ contato.dataNascimento }" pattern="dd/MM/yyyy"/> </td>
 				</tr>
 				</jstl:forEach>
 			</tbody>
