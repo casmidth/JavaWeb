@@ -1,0 +1,4 @@
+<input type="text" id="${dateObject}" name="${dateObejct}"/> <br />
+<script>
+	$("#${dateObject}").datepicker({dateFormat: 'dd/mm/yy'});
+</script>

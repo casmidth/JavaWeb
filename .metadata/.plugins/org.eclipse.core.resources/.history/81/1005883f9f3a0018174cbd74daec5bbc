@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Projeto fj21-agenda</title>
+	</head>
+	<body>
+		<h1>BEM VINDO!!!</h1>
+		<a href="fj21-agenda/mvc?logica=ListaContatosLogic">Ver Lista Contatos</a>
+		<a href="fj21-agenda/mvc?logica=FormAdicionaContato">Adicionar Novo Contato</a>
+	</body>
+</html>

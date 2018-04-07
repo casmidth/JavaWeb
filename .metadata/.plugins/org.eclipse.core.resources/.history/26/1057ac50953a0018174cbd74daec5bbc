@@ -1,0 +1,11 @@
+package br.com.caelum.mvc.servlet;
+
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+
+@WebServlet("/mvc")
+public class ControllerServlet extends HttpServlet {
+	
+	
+
+}
