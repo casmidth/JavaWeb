@@ -16,13 +16,14 @@
 <fullyQualifiedTypeName name="br.com.carleum.model.Contato"/>
 <fullyQualifiedTypeName name="br.com.caelum.jdbc.dao.ContatoDAO"/>
 <fullyQualifiedTypeName name="br.com.caelum.model.Contato"/>
-<fullyQualifiedTypeName name="java.util.Calendar"/>
-<fullyQualifiedTypeName name="java.sql.Date"/>
-<fullyQualifiedTypeName name="java.util.Date"/>
 <fullyQualifiedTypeName name="javax.servlet.annotation.WebServlet"/>
 <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServlet"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServletResponse"/>
 <fullyQualifiedTypeName name="java.io.PrintWriter"/>
 <fullyQualifiedTypeName name="br.com.caelum.util.MensagemAoUsuario"/>
+<fullyQualifiedTypeName name="java.util.Calendar"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="br.com.caelum.util.FixDateFormating"/>
+<fullyQualifiedTypeName name="java.sql.Date"/>
 </qualifiedTypeNameHistroy>

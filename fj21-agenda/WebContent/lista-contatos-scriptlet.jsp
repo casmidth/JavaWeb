@@ -1,7 +1,7 @@
 <%@page import="br.com.caelum.jdbc.dao.ContatoDAO"%>
 <%@page import="br.com.caelum.model.Contato"%>
 <%@page import="java.util.*" %>
-<%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -16,6 +16,8 @@
 	<body>
 	<jsp:useBean id="contatos" class="br.com.caelum.jdbc.dao.ContatoDAO"/>
 	
+	<c:import url="header.html" />
+	
 	<main class="container">
 		<h1>Lista de contatos: </h1>
 		<table class="table">
@@ -29,17 +31,25 @@
 				</tr>
 			</thead>
 			<tbody>
-				<jstl:forEach var="contato" items="${ contatos.list }"> 
+				<c:forEach var="contato" items="${ contatos.list }"> 
 				<tr>
 					<td>${ contato.id }</td>
 					<td>${ contato.nome }</td>
-					<td>${ contato.email }</td>
+					<td>
+						<c:if test="${ empty contato.email }">
+							Email not found!
+						</c:if>
+						<c:if test="${ not empty contato.email }">
+							<a href="mailto:${ contato.email }">${ contato.email }</a>
+						</c:if>
+					</td>				
 					<td>${ contato.endereco }</td>
 					<td><fmt:formatDate value="${ contato.dataNascimento.time }" pattern="dd/MM/yyyy"/> </td>
 				</tr>
-				</jstl:forEach>
+				</c:forEach>
 			</tbody>
 		</table>
 	</main>
+	<c:import url="footer.html" />
 	</body>
 </html>
