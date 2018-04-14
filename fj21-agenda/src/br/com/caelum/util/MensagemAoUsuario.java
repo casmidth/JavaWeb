@@ -5,14 +5,14 @@ import java.io.PrintWriter;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletResponse;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 public class MensagemAoUsuario {
 
-	public static void mandarHeader1(HttpServletResponse resp, String texto) throws IOException{
+	public static void sendMessage(HttpServletResponse resp, String texto) throws IOException{
 
-		PrintWriter pw = resp.getWriter();
-		pw.println("<html><body><h1>");
-		pw.println(texto);
-		pw.println("</h1></body></html>");
+		final JFrame parent = new JFrame();
+		JOptionPane.showMessageDialog(parent, texto);
 	}
 }

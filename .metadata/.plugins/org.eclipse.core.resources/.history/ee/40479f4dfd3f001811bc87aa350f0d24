@@ -1,0 +1,20 @@
+package br.com.caelum.tarefas.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import br.com.caelum.tarefas.dao.JdbcTarefaDao;
+import br.com.caelum.tarefas.modelo.Tarefa;
+
+@Controller
+@RequestMapping("/tarefas")
+public class TarefasController {
+
+	@RequestMapping("/adicionaTarefa")
+	public String addNovaTarefa(Tarefa tarefa){
+		JdbcTarefaDao dao = new JdbcTarefaDao();
+		dao.adiciona(tarefa);		
+		return "tarefaAdicionada";
+		
+	}
+}

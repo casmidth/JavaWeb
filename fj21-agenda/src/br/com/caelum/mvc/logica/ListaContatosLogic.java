@@ -1,5 +1,6 @@
 package br.com.caelum.mvc.logica;
 
+import java.sql.Connection;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -13,7 +14,7 @@ public class ListaContatosLogic implements Logica{
 	@Override
 	public String executa(HttpServletRequest req, HttpServletResponse resp) {
 		
-		List<Contato> contatos = new ContatoDAO().getList();
+		List<Contato> contatos = new ContatoDAO((Connection)req.getAttribute("conexao")).getList();
 		
 		req.setAttribute("contatos", contatos);
 		

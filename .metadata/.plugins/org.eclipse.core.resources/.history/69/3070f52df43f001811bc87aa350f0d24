@@ -1,0 +1,12 @@
+package br.com.caelum.tarefas.controller;
+
+public class OlaMundoController {
+
+	public void olaMundo(){
+		System.out.println("Ola mundo!");
+	}
+	
+	public void tchauMundo(){
+		System.out.println("Tchau mundo!");
+	}
+}

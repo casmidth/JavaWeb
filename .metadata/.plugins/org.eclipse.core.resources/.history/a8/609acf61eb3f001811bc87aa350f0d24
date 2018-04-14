@@ -1,0 +1,35 @@
+package br.com.caelum.mvc.logica;
+
+import java.io.IOException;
+import java.sql.Connection;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import br.com.caelum.jdbc.dao.ContatoDAO;
+import br.com.caelum.model.Contato;
+import br.com.caelum.util.MensagemAoUsuario;
+
+public class RemoveContatoLogica implements Logica{
+
+	@Override
+	public String executa(HttpServletRequest req, HttpServletResponse resp) {
+		
+		long id = Long.parseLong(req.getParameter("id"));
+		Contato contato = new Contato();
+		contato.setId(id);
+		
+		ContatoDAO dao = new ContatoDAO((Connection)req.getAttribute("conexao"));
+		dao.deleta(contato);
+		
+		try {
+			MensagemAoUsuario.sendMessage(resp, "Excluindo contato!");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return null;
+		
+		
+	}
+	
+}

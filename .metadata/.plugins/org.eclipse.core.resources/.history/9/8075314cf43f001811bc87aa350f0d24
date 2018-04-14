@@ -1,0 +1,20 @@
+package br.com.caelum.tarefas.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping("/tarefas")
+public class OlaMundoController {
+
+
+	@RequestMapping("/olamundo")
+	public void olaMundo(){
+		System.out.println("Ola mundo!");
+	}
+	
+	@RequestMapping("/tchamundo")
+	public void tchauMundo(){
+		System.out.println("Tchau mundo!");
+	}
+}

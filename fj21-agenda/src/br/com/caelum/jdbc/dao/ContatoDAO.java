@@ -17,8 +17,24 @@ public class ContatoDAO {
 
 	private Connection connection;
 	
-	public ContatoDAO(){
-		this.connection = new ConnectionFactory().getConnection();
+	public ContatoDAO(Connection injectedConnection){
+		this.connection = injectedConnection;
+	}
+	
+	public void deleta(Contato contato){
+		String sql = "delete from contato where id = ?";
+		try {
+		PreparedStatement smtm = this.connection.prepareStatement(sql);
+		smtm.setLong(1, contato.getId());
+		
+		System.out.println(smtm);
+		smtm.execute();
+		smtm.close();
+		
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+			
 	}
 	
 	public void adiciona(Contato contato){
@@ -53,6 +69,7 @@ public class ContatoDAO {
 			
 			while(resultSet.next()){
 				Contato contato = new Contato();
+				contato.setId((long)resultSet.getInt("id"));
 				contato.setNome(resultSet.getString("nome"));
 				contato.setEmail(resultSet.getString("email"));
 				contato.setEndereco(resultSet.getString("endereco"));
