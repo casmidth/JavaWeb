@@ -41,4 +41,23 @@ public class JdbcUsuarioDao {
 			throw new RuntimeException(e);
 		}
 	}
+	
+	public void criarNovoUsuario(Usuario usuario){
+		
+		String sql = "insert into usuarios (login, senha) values (?, ?)";
+		PreparedStatement smtm;
+		try {
+			 smtm = this.connection.prepareStatement(sql);
+			 
+			 smtm.setString(1, usuario.getLogin());
+			 smtm.setString(2, usuario.getSenha());
+			 System.out.println(smtm);
+			 smtm.execute();
+			 
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		
+	}
 }

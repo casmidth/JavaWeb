@@ -55,7 +55,7 @@ public class TarefasController {
 	}
 	
 	@RequestMapping("/alterar")
-	public String alterar(Tarefa tarefa){
+	public String altera(Tarefa tarefa){
 		JdbcTarefaDao dao = new JdbcTarefaDao();
 		dao.altera(tarefa);
 		return "redirect:listar"; 
@@ -64,7 +64,7 @@ public class TarefasController {
 	
 	@ResponseBody //so finaliza quando o response for 200
 	@RequestMapping("finalizar")
-	public void finalizar(Tarefa tarefa){
+	public void finaliza(Tarefa tarefa){
 		JdbcTarefaDao dao = new JdbcTarefaDao();
 		dao.finaliza(tarefa.getId());
 	}

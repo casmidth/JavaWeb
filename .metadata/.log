@@ -529,3 +529,9 @@ org.w3c.dom.DOMException: Invalid Hierarchy Request
 
 !ENTRY org.eclipse.jface.text 2 0 2018-04-21 11:47:12.905
 !MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
+
+!ENTRY org.eclipse.jface.text 2 0 2018-04-21 13:56:02.596
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2018-04-21 13:56:02.598
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'

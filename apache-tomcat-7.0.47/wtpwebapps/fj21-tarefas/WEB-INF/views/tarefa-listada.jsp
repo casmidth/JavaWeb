@@ -20,6 +20,8 @@
 			<th>Descricao</th>
 			<th>Finalizado</th>
 			<th>Data de Finalizacao</th>
+			<th>Alterar</th>
+			<th>Remover</th>
 		</tr>
 		<c:forEach var="tarefa" items="${ listaTarefas }">
 		 <tr>
@@ -38,13 +40,11 @@
 		 	<td><fmt:formatDate value="${ tarefa.dataFinalizacao.time }" pattern="dd/MM/yyyy" /></td>
 		 	
 		 	<td>
-		 		<a href="remover?id=${ tarefa.id }">Remover</a>
-		 	</td>
-		 	
-		 	<td>
 		 		<a href="context?id=${ tarefa.id }">Alterar</a>
 		 	</td>
-		 
+		 	<td id="removerTarefa_${ tarefa.id }">
+		 		<a href="#" onclick="remover(${ tarefa.id})">Remover</a>
+		 	</td>
 		 </tr>
 		</c:forEach>
 	</table>
@@ -57,6 +57,13 @@
 				$("#statusTarefa_" + id).html("Finalizada");
 			});
 		}
+		
+		function remover(id){
+			$.post("remover", {'id' : id}, function(){
+				$("#removerTarefa_" + id).closest("tr").hide();	
+			});
+		} 
+		
 	</script>
 </body>
 </html>

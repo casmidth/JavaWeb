@@ -8,7 +8,7 @@
 </head>
 <body>
 	<c:import url="header.jsp" />
-	<h1>Bem vindo ao tarefinhas</h1>
+	<h1>Ola ${ usuario.login }! Bem vindo ao tarefinhas</h1>
 	<h4>Seu organizador de tarefas favorito!</h4>
 	<c:import url="footer.jsp" />	
 </body>
