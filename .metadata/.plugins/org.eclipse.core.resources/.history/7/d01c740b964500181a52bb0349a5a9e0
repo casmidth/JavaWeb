@@ -1,0 +1,30 @@
+package br.com.caelum.tarefas.controller;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
+
+public class InterceptorHandler extends HandlerInterceptorAdapter {
+	 
+	@Override
+	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+		
+		if(request.getSession().getAttribute("usuario") != null){
+			return true;
+		}
+		
+		String url = request.getRequestURI();
+		if(url.endsWith("/login") 
+				|| url.endsWith("/usuario/novo")
+				|| url.endsWith("/usuario/autenticado")
+				|| url.contains("/resources")){
+			return true;
+		}
+
+		response.sendRedirect("/usuario/login");
+		return false;
+		
+	}
+	
+}
