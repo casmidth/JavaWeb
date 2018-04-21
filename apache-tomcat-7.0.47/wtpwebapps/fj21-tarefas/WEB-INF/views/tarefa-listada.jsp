@@ -5,8 +5,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Lista Tarefas</title>
+	<script type="text/javascript" src="../resources/js/jquery.js"></script>
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Lista Tarefas</title>
+	
 </head>
 <body>
 	<c:import url="header.jsp" />
@@ -22,13 +25,38 @@
 		 <tr>
 		 	<td>${ tarefa.id }</td>
 		 	<td>${ tarefa.descricao }</td>
-		 	<td>${ tarefa.finalizado }</td>
+		 	
+		 	<c:if test="${not tarefa.finalizado }">
+		 		<td>
+		 		<a href="#" onclick="finalizarAgora(${ tarefa.id })">Finalizar</a>
+		 		</td>
+		 	</c:if>
+		 	<c:if test="${ tarefa.finalizado }" >
+		 		<td>Finalizada</td>
+			</c:if>
+		 	
 		 	<td>
 		 		<fmt:formatDate value="${ tarefa.dataFinalizacao }" pattern="dd/MM/yyyy" />
 		 	</td>
+		 	
+		 	<td>
+		 		<a href="remover?id=${ tarefa.id }">Remover</a>
+		 	</td>
+		 	
+		 	<td>
+		 		<a href="context?id=${ tarefa.id }">Alterar</a>
+		 	</td>
+		 
 		 </tr>
 		</c:forEach>
 	</table>
 	<c:import url="footer.jsp" />
+	
+	<!-- JavaScript functions -->
+	<script>
+		function finalizarAgora(id){
+			
+		}
+	</script>
 </body>
 </html>
