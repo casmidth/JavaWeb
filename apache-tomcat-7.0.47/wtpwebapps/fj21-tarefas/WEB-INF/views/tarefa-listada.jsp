@@ -27,17 +27,15 @@
 		 	<td>${ tarefa.descricao }</td>
 		 	
 		 	<c:if test="${not tarefa.finalizado }">
-		 		<td>
+		 		<td id="statusTarefa_${ tarefa.id }">
 		 		<a href="#" onclick="finalizarAgora(${ tarefa.id })">Finalizar</a>
 		 		</td>
 		 	</c:if>
-		 	<c:if test="${ tarefa.finalizado }" >
-		 		<td>Finalizada</td>
-			</c:if>
+		 	<c:if test="${ tarefa.finalizado }">
+		 		<td> Finalizada </td>
+		 	</c:if>
 		 	
-		 	<td>
-		 		<fmt:formatDate value="${ tarefa.dataFinalizacao }" pattern="dd/MM/yyyy" />
-		 	</td>
+		 	<td><fmt:formatDate value="${ tarefa.dataFinalizacao.time }" pattern="dd/MM/yyyy" /></td>
 		 	
 		 	<td>
 		 		<a href="remover?id=${ tarefa.id }">Remover</a>
@@ -55,7 +53,9 @@
 	<!-- JavaScript functions -->
 	<script>
 		function finalizarAgora(id){
-			
+			$.post("finalizar", {'id': id}, function(){
+				$("#statusTarefa_" + id).html("Finalizada");
+			});
 		}
 	</script>
 </body>
